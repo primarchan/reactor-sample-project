@@ -2,6 +2,8 @@ package org.example;
 
 import reactor.core.publisher.Flux;
 
+import java.time.Duration;
+
 public class Operator1 {
 
     // Map
@@ -29,7 +31,8 @@ public class Operator1 {
     // Flatmap
     public Flux<Integer> fluxFlatMap1() {
         return Flux.range(1, 10)
-                .flatMap(i -> Flux.range(i * 10, 10))
+                .flatMap(i -> Flux.range(i * 10, 10)
+                        .delayElements(Duration.ofMillis(10)))
                 .log();
     }
 

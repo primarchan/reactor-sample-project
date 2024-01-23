@@ -3,8 +3,6 @@ package org.example;
 import org.junit.jupiter.api.Test;
 import reactor.test.StepVerifier;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class Operator1Test {
 
     private final Operator1 operator1 = new Operator1();
